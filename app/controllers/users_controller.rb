@@ -11,31 +11,25 @@ class UsersController < ApplicationController
   end
 
   # GET /users/new
-  def new
-  end
+  def new; end
 
   # GET /users/1/edit
   def edit; end
 
   # POST /users or /users.json
-  def create
-  end
+  def create; end
 
   # PATCH/PUT /users/1 or /users/1.json
-  def update
-  end
+  def update; end
 
   # DELETE /users/1 or /users/1.json
-  def destroy
-  end
+  def destroy; end
 
   private
 
   # Use callbacks to share common setup or constraints between actions.
-  def set_user
-  end
+  def set_user; end
 
   # Only allow a list of trusted parameters through.
-  def user_params
-  end
+  def user_params; end
 end
