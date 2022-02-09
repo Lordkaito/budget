@@ -1,0 +1,13 @@
+<section class="add-group-form">
+  <%= form_with model: @group, url: user_groups_path, method: :post, local: true do |f| %>
+  <div class="field">
+    <%= f.text_field :name, autofocus: true, class: 'group-name', placeholder: 'Group name'%>
+  </div>
+  <div class="field">
+    <%= f.text_field :icon, placeholder: 'Group icon url'%>
+  </div>
+  <div class="action">
+    <%= f.submit 'Create' %>
+  </div>
+  <%end%>
+</section>

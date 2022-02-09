@@ -8,11 +8,21 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <script src="https://kit.fontawesome.com/63ff2cfeab.js" crossorigin="anonymous" data-mutate-approach="sync"></script>
   </head>
 
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <% if user_signed_in? %>
+    <nav class="navbar">
+      <%= link_to 'Go back', root_path, class: 'layout-link' %>
+      <p class="layout-link">
+        Hello <%= current_user.name %>
+      </p>
+      <%= link_to 'Log out', destroy_user_session_path, class: 'layout-link' %>
+    </nav>
+    <%end%>
 
     <%= yield %>
   </body>

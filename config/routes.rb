@@ -6,5 +6,5 @@ Rails.application.routes.draw do
     resources :entities
   end
 
-  root "home#index"
+  root "users#index"
 end

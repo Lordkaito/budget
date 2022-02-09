@@ -1,10 +1,16 @@
-<p style="color: green"><%= notice %></p>
+<section class="group-show">
+  <div class="options">
+    <div class="add-group">
+      <%= link_to 'Create a transaction', new_user_entity_path(current_user) %>
+    </div>
+    <div class="show-all-groups">
+      <%= link_to 'Back to groups', user_groups_path(current_user) %>
+    </div>
+    <div class="total-amount-for-user">
+      <p>Group amount: <%= @group_amount %></p>
+    </div>
+  </div>
+</section>
 
-<%= render @group %>
-
-<div>
-  <%= link_to "Edit this group", edit_group_path(@group) %> |
-  <%= link_to "Back to groups", groups_path %>
-
-  <%= button_to "Destroy this group", @group, method: :delete %>
-</div>
+<%= @group.name%>
+<%= @group.icon%>
