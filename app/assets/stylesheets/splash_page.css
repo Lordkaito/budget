@@ -1,0 +1,42 @@
+.homepage {
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 200px;
+}
+
+.name-title {
+  color: blue;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 10px;
+}
+
+.log-in {
+  background-color: #3778c2;
+}
+
+.log-in a {
+  color: #fff;
+}
+
+.sign-up a {
+  color: grey;
+}
+
+.link {
+  display: inline-block;
+  padding: 1.6rem 5rem;
+}

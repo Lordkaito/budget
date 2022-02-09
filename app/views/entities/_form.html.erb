@@ -1,17 +1,16 @@
-<%= form_with(model: entity) do |form| %>
-  <% if entity.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(entity.errors.count, "error") %> prohibited this entity from being saved:</h2>
-
-      <ul>
-        <% entity.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div>
-    <%= form.submit %>
+<section class="add-entity-form">
+  <%= form_with model: @entity, url: user_entities_path, method: :post, local: true do |f| %>
+  <div class="field">
+    <%= f.text_field :name, autofocus: true, class: 'group-name', placeholder: 'Entity name'%>
   </div>
-<% end %>
+  <div class="field">
+    <%= f.number_field :amount, placeholder: 'Amount'%>
+  </div>
+  <div class="field">
+    <%= f.select :group_id, @groups.map { |group| [group.name, group.id] } %>
+  </div>
+  <div class="action">
+    <%= f.submit 'Create' %>
+  </div>
+  <%end%>
+</section>

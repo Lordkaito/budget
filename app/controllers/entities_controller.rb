@@ -1,9 +1,8 @@
 class EntitiesController < ApplicationController
-  before_action :set_entity, only: %i[show edit update destroy]
-
+  before_action :authenticate_user!
   # GET /entities or /entities.json
   def index
-    @entities = Entity.all
+    @all_entities = Entity.all
   end
 
   # GET /entities/1 or /entities/1.json
@@ -11,7 +10,11 @@ class EntitiesController < ApplicationController
 
   # GET /entities/new
   def new
+    @groups = Group.all
     @entity = Entity.new
+    respond_to do |format|
+      format.html { render :new }
+    end
   end
 
   # GET /entities/1/edit
@@ -19,51 +22,34 @@ class EntitiesController < ApplicationController
 
   # POST /entities or /entities.json
   def create
-    @entity = Entity.new(entity_params)
+    @entity = current_user.entities.new(entity_params)
 
     respond_to do |format|
-      if @entity.save
-        format.html { redirect_to entity_url(@entity), notice: 'Entity was successfully created.' }
-        format.json { render :show, status: :created, location: @entity }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @entity.errors, status: :unprocessable_entity }
+      format.html do
+        if @entity.save
+          flash[:success] = 'Entity was successfully created.'
+          redirect_to root_path
+        else
+          flash[:notice] = 'Entity was not created.'
+          render :new
+        end
       end
     end
   end
 
   # PATCH/PUT /entities/1 or /entities/1.json
-  def update
-    respond_to do |format|
-      if @entity.update(entity_params)
-        format.html { redirect_to entity_url(@entity), notice: 'Entity was successfully updated.' }
-        format.json { render :show, status: :ok, location: @entity }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @entity.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  def update; end
 
   # DELETE /entities/1 or /entities/1.json
-  def destroy
-    @entity.destroy
-
-    respond_to do |format|
-      format.html { redirect_to entities_url, notice: 'Entity was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
+  def destroy; end
 
   private
 
   # Use callbacks to share common setup or constraints between actions.
-  def set_entity
-    @entity = Entity.find(params[:id])
-  end
+  def set_entity; end
 
   # Only allow a list of trusted parameters through.
   def entity_params
-    params.fetch(:entity, {})
+    params.require(:entity).permit(:name, :amount, :group_id)
   end
 end

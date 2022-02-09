@@ -1,14 +1,46 @@
-<p style="color: green"><%= notice %></p>
+<section class="homepage-user">
+  <% if user_signed_in? %>
+    <div class="options">
+      <div class="show-options">
+        <div class="show-all-groups">
+        <%= link_to 'Show groups', user_groups_path(current_user), class:'show-groups' %>
+        </div>
+        <div class="show-all-entities">
+          <%= link_to 'Show entities', user_entities_path(current_user), class:'show-entities' %>
+        </div>
+      </div>
+      <div class="total-amount-for-user">
+        <p>Total amount: <%= @total_amount %></p>
+      </div>
+      <% @groups.each do |group|%>
+        <div class="single-group-container">
+          <div class="sample-icon">
+            <%= render 'users/dollar'%>
+          </div>
+          <div class="group-name">
+            <%= link_to group.name, user_group_path(@user.id, group.id) %>
+          </div>
+          <div class="entities-amount">
+            <% group.entities.each do |entity| %>
+              <% amount = 0 %>
+              <% amount += entity.amount%>
+              <%= amount %>
+            <%end%>
+          </div>
+        </div>
+      <% end %>
+      <div class="low-buttons">
+        <div class="add-group">
+          <%= link_to 'Create group', new_user_group_path(current_user) %>
+        </div>
+        <hr />
+        <div class="add-entity">
+          <%= link_to 'Create entity', new_user_entity_path(current_user) %>
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <%= render 'users/template'%>
+  <%end%>
 
-<h1>Users</h1>
-
-<div id="users">
-  <% @users.each do |user| %>
-    <%= render user %>
-    <p>
-      <%= link_to "Show this user", user %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New user", new_user_path %>
+</section>
