@@ -55,7 +55,6 @@ hr {
   background-color: #3778c2;
   padding: 1rem;
   border-top: 1px solid #1f60a7;
-
 }
 
 .show-groups,
@@ -87,5 +86,3 @@ hr {
 .group-name a {
   text-transform: uppercase;
 }
-
-

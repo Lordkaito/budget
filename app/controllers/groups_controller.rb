@@ -53,7 +53,6 @@ class GroupsController < ApplicationController
     end
   end
 
-
   # PATCH/PUT /groups/1 or /groups/1.json
   def update; end
 
@@ -69,5 +68,4 @@ class GroupsController < ApplicationController
   def group_params
     params.require(:group).permit(:name, :icon)
   end
-
 end
