@@ -3,14 +3,14 @@
     <div class="options">
       <div class="show-options">
         <div class="show-all-groups">
-        <%= link_to 'Show groups', user_groups_path(current_user), class:'show-groups' %>
+          <%= link_to 'Show groups', user_groups_path(current_user), class:'show-groups' %>
         </div>
         <div class="show-all-entities">
           <%= link_to 'Show entities', user_entities_path(current_user), class:'show-entities' %>
         </div>
       </div>
       <div class="total-amount-for-user">
-        <p>Total amount: <%= @total_amount %></p>
+        <p>Total amount: <%= @total_amount %>$</p>
       </div>
       <% @groups.each do |group|%>
         <div class="single-group-container">
@@ -21,11 +21,11 @@
             <%= link_to group.name, user_group_path(@user.id, group.id) %>
           </div>
           <div class="entities-amount">
-            <% group.entities.each do |entity| %>
-              <% amount = 0 %>
-              <% amount += entity.amount%>
-              <%= amount %>
-            <%end%>
+            <% amount = 0 %>
+              <% group.entities.each do |entity| %>
+                <% amount += entity.amount%>
+              <%end%>
+            <%= amount %>$
           </div>
         </div>
       <% end %>

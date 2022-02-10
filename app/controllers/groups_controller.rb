@@ -5,12 +5,10 @@ class GroupsController < ApplicationController
     @all_groups = Group.all
     @total_amount = 0
     @all_groups.each do |group|
-      @amount = 0
       @entities = group.entities
       @entities.each do |entity|
-        @amount += entity.amount
+        @total_amount += entity.amount
       end
-      @total_amount += @amount
     end
   end
 

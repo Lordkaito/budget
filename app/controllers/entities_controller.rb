@@ -3,10 +3,16 @@ class EntitiesController < ApplicationController
   # GET /entities or /entities.json
   def index
     @all_entities = Entity.all
+    @total_amount = 0
+    @all_entities.each do |entity|
+      @total_amount += entity.amount
+    end
   end
 
   # GET /entities/1 or /entities/1.json
-  def show; end
+  def show
+    @entity = Entity.find(params[:id])
+  end
 
   # GET /entities/new
   def new
