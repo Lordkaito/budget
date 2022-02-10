@@ -40,22 +40,6 @@ class EntitiesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /entities/1 or /entities/1.json
-  def update; end
-
-  # DELETE /entities/1 or /entities/1.json
-  def destroy
-    @group = Group.includes(:entities).find(params[:group_id])
-    @entity = @group.entities.find(params[:id])
-    @entity.destroy
-    respond_to do |format|
-      format.html do
-        flash[:success] = 'Entity was successfully destroyed.'
-        redirect_to root_path
-      end
-    end
-  end
-
   private
 
   # Only allow a list of trusted parameters through.

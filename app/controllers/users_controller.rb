@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   # before_action :authenticate_user!
-  # GET /users or /users.json
+  # GET /users
   def index
     @users = User.all
     @user = current_user
@@ -17,10 +17,5 @@ class UsersController < ApplicationController
       end
       @total_amount += @amount
     end
-  end
-
-  # GET /users/1
-  def show
-    @user = User.find(params[:id])
   end
 end
