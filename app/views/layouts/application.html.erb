@@ -12,8 +12,6 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <% if user_signed_in? %>
     <nav class="navbar">
       <%= link_to 'Go back', root_path, class: 'layout-link' %>
@@ -25,5 +23,7 @@
     <%end%>
 
     <%= yield %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
   </body>
 </html>

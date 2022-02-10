@@ -76,3 +76,7 @@ gem 'cancancan'
 gem 'devise'
 
 gem 'font_awesome5_rails'
+
+group :test do
+  gem 'rspec-rails'
+end

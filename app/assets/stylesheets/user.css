@@ -45,16 +45,19 @@
   bottom: 0;
 }
 
-hr {
-  height: 80%;
-  color: #fff;
-}
-
 .add-group,
 .add-entity {
   padding: 1rem;
   width: 100%;
   text-align: center;
+}
+
+.add-group {
+  border-right: 1px solid #fff;
+}
+
+.add-entity {
+  border-left: 1px solid #fff;
 }
 
 .add-group a,
@@ -121,3 +124,4 @@ hr {
   text-transform: uppercase;
   margin-bottom: 1rem;
 }
+

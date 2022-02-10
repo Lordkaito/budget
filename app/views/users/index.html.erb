@@ -1,5 +1,5 @@
-<section class="homepage-user">
   <% if user_signed_in? %>
+  <section class="homepage-user">
     <div class="options">
       <div class="show-options">
         <div class="show-all-groups">
@@ -33,7 +33,6 @@
         <div class="add-group">
           <%= link_to 'Create group', new_user_group_path(current_user) %>
         </div>
-        <hr />
         <div class="add-entity">
           <%= link_to 'Create entity', new_user_entity_path(current_user) %>
         </div>
@@ -41,6 +40,5 @@
     </div>
   <% else %>
     <%= render 'users/template'%>
-  <%end%>
-
-</section>
+  </section>
+<%end%>
