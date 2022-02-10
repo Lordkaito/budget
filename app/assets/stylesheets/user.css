@@ -100,7 +100,7 @@
   padding: 1rem;
   margin-top: 1rem;
   background-color: #fefefe;
-  box-shadow: 3px 3px 3px 2px rgba(0,0,0,0.2);
+  box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.2);
 }
 
 .svg-dollar {
@@ -124,4 +124,3 @@
   text-transform: uppercase;
   margin-bottom: 1rem;
 }
-
