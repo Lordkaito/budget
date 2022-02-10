@@ -2,7 +2,7 @@ class GroupsController < ApplicationController
   before_action :authenticate_user!
   # GET /groups or /groups.json
   def index
-    @all_groups = Group.all
+    @all_groups = current_user.groups
     @total_amount = 0
     @all_groups.each do |group|
       @entities = group.entities
