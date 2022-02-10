@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   # before_action :authenticate_user!
   # GET /users
   def index
-    @users = User.all
+    # @users = User.all
     @user = current_user
     return unless user_signed_in?
 

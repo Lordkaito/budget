@@ -2,7 +2,7 @@ class EntitiesController < ApplicationController
   before_action :authenticate_user!
   # GET /entities or /entities.json
   def index
-    @all_entities = Entity.all
+    @all_entities = current_user.entities
     @total_amount = 0
     @all_entities.each do |entity|
       @total_amount += entity.amount
@@ -16,7 +16,7 @@ class EntitiesController < ApplicationController
 
   # GET /entities/new
   def new
-    @groups = Group.all
+    @groups = current_user.groups
     @entity = Entity.new
     respond_to do |format|
       format.html { render :new }
