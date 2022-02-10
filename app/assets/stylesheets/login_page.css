@@ -1,8 +1,10 @@
 body {
-  background-color: #eee;
+  background-color: #fff;
 }
 
-.log-in-container {
+.log-in-container,
+.add-group-form,
+.add-entity-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,7 +46,9 @@ body {
 
 .login-button,
 .back-button,
-.submit-button {
+.submit-button,
+.create-group-button,
+.create-entity-button {
   margin-top: 0.3rem;
   font-family: 'Courier New', Courier, monospace;
   font-size: 1rem;
@@ -53,12 +57,16 @@ body {
   border: none;
 }
 
-.new_user .field {
+.new_user .field,
+.new-group .field,
+.new-entity .field {
   max-width: 90%;
   width: 100%;
 }
 
-.new_user .field input {
+.new_user .field input,
+.new-group .field input,
+.new-entity .field input {
   width: 100%;
   font-size: 1rem;
   margin: 0.3rem 0;
@@ -80,4 +88,26 @@ body {
 
 .forgot:active {
   color: #333;
+}
+
+.new-group,
+.new-entity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.4rem;
+}
+
+.new-entity select {
+  width: 100%;
+  background-color: #555;
+  color: #fff;
+  padding: 0.7rem;
+  border: none;
+  font-size: 1rem;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  outline: none;
+  margin-top: 1rem;
+  text-transform: uppercase;
 }

@@ -1,6 +1,6 @@
 class Group < ApplicationRecord
-  belongs_to :user
-  has_many :entities, dependent: :destroy
+  belongs_to :user, dependent: :destroy
+  has_many :entities
 
   def show_entities_for_a_given_group
     @group = Group.find(params[:id])

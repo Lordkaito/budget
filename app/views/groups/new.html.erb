@@ -1,9 +1,10 @@
-<h1>New group</h1>
+<section class="add-group-form">
+  <div class="buttons-container">
+      <%= link_to 'Back', root_path, class: 'back-button'%>
 
-<%= render 'groups/group_form_creation' %>
-
-<br>
-
-<div>
-  <%= link_to "Back to groups", user_groups_path %>
-</div>
+    <p class="create-group-button">
+      New group
+    </p>
+  </div>
+  <%= render 'groups/group_form_creation' %>
+</section>

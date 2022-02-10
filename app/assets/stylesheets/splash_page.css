@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Festive');
+
 .homepage {
   height: 100%;
 }
@@ -9,10 +11,13 @@
   justify-content: center;
   height: 100%;
   gap: 200px;
+  background-color: #fff;
 }
 
 .name-title {
-  color: blue;
+  color: #c18037;
+  font-size: 3rem;
+  font-family: 'Festive', cursive;
 }
 
 .actions {

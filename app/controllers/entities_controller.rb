@@ -3,10 +3,16 @@ class EntitiesController < ApplicationController
   # GET /entities or /entities.json
   def index
     @all_entities = Entity.all
+    @total_amount = 0
+    @all_entities.each do |entity|
+      @total_amount += entity.amount
+    end
   end
 
-  # GET /entities/1 or /entities/1.json
-  def show; end
+  # GET /entities/1
+  def show
+    @entity = Entity.find(params[:id])
+  end
 
   # GET /entities/new
   def new
@@ -16,9 +22,6 @@ class EntitiesController < ApplicationController
       format.html { render :new }
     end
   end
-
-  # GET /entities/1/edit
-  def edit; end
 
   # POST /entities or /entities.json
   def create
@@ -41,12 +44,19 @@ class EntitiesController < ApplicationController
   def update; end
 
   # DELETE /entities/1 or /entities/1.json
-  def destroy; end
+  def destroy
+    @group = Group.includes(:entities).find(params[:group_id])
+    @entity = @group.entities.find(params[:id])
+    @entity.destroy
+    respond_to do |format|
+      format.html do
+        flash[:success] = 'Entity was successfully destroyed.'
+        redirect_to root_path
+      end
+    end
+  end
 
   private
-
-  # Use callbacks to share common setup or constraints between actions.
-  def set_entity; end
 
   # Only allow a list of trusted parameters through.
   def entity_params

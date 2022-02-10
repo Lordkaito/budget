@@ -5,12 +5,10 @@ class GroupsController < ApplicationController
     @all_groups = Group.all
     @total_amount = 0
     @all_groups.each do |group|
-      @amount = 0
       @entities = group.entities
       @entities.each do |entity|
-        @amount += entity.amount
+        @total_amount += entity.amount
       end
-      @total_amount += @amount
     end
   end
 
@@ -33,9 +31,6 @@ class GroupsController < ApplicationController
     end
   end
 
-  # GET /groups/1/edit
-  def edit; end
-
   # POST /groups or /groups.json
   def create
     @group = current_user.groups.new(group_params)
@@ -53,16 +48,7 @@ class GroupsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /groups/1 or /groups/1.json
-  def update; end
-
-  # DELETE /groups/1 or /groups/1.json
-  def destroy; end
-
   private
-
-  # Use callbacks to share common setup or constraints between actions.
-  def set_group; end
 
   # Only allow a list of trusted parameters through.
   def group_params

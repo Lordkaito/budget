@@ -1,2 +1,10 @@
-<h1>New entity</h1>
-<%= render 'entities/form' %>
+<section class="add-entity-form">
+  <div class="buttons-container">
+      <%= link_to 'Back', root_path, class: 'back-button'%>
+
+    <p class="create-entity-button">
+      New entity
+    </p>
+  </div>
+  <%= render 'entities/form' %>
+</section>

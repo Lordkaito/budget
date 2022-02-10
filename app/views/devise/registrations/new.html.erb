@@ -1,6 +1,8 @@
 <section class="sign-up-container">
-  <p>Back</p>
-  <p>Sign up</p>
+  <div class="buttons-container">
+    <%= link_to 'Back', root_path, class: 'back-button'%>
+    <p class="login-button">New account</p>
+  </div>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
@@ -22,7 +24,7 @@
     </div>
 
     <div class="actions">
-      <%= f.submit "Sign up" %>
+      <%= f.submit "Sign up", class:'submit-button' %>
     </div>
   <% end %>
 
