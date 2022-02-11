@@ -1,0 +1,126 @@
+.navbar {
+  background-color: #3778c2;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: fixed;
+}
+
+.homepage-user,
+.homepage-groups,
+.homepage-entity,
+.group-show {
+  max-height: 100%;
+  height: 100%;
+  padding-top: 2.9rem;
+  overflow: hidden;
+}
+
+.layout-link {
+  padding: 0.7rem;
+  color: #fff;
+  margin-top: 0.3rem;
+}
+
+.options,
+.groups-options,
+.entity-options,
+.group-show-options {
+  display: flex;
+  height: calc((100% - 20px) - 2rem);
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+}
+
+.low-buttons {
+  background-color: #5fb523;
+  width: 100%;
+  max-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+}
+
+.add-group,
+.add-entity {
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+}
+
+.add-group {
+  border-right: 1px solid #fff;
+}
+
+.add-entity {
+  border-left: 1px solid #fff;
+}
+
+.add-group a,
+.add-entity a {
+  color: #fff;
+}
+
+.show-options,
+.amount-groups,
+.amount-entity,
+.single-group-amount {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+  background-color: #3778c2;
+  padding: 1rem;
+  border-top: 1px solid #1f60a7;
+}
+
+.amount-groups .total-amount-for-group,
+.amount-entity .total-amount-for-entity,
+.single-group-amount .total-amount-for-group,
+.new-entity-show {
+  color: #fff;
+}
+
+.show-groups,
+.show-entities {
+  color: #fff;
+}
+
+.single-group-container,
+.single-entity-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
+  border-radius: 3px;
+  padding: 1rem;
+  margin-top: 1rem;
+  background-color: #fefefe;
+  box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.2);
+}
+
+.svg-dollar {
+  width: 30px;
+  height: 30px;
+}
+
+.total-amount-for-user {
+  align-self: flex-end;
+  margin: 1rem;
+}
+
+.group-name a,
+.entity-name a,
+.add-entity a,
+.add-group a {
+  text-transform: uppercase;
+}
+
+.entity-name-p {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}

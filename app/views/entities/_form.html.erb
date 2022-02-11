@@ -1,0 +1,14 @@
+  <%= form_with model: @entity, url: user_entities_path, method: :post, local: true, class:'new-entity' do |f| %>
+  <div class="field">
+    <%= f.text_field :name, autofocus: true, class: 'group-name', placeholder: 'Entity name'%>
+  </div>
+  <div class="field">
+    <%= f.number_field :amount, placeholder: 'Amount'%>
+  </div>
+  <div class="field">
+    <%= f.select :group_id, @groups.map { |group| [group.name, group.id] } %>
+  </div>
+  <div class="action">
+    <%= f.submit 'Create', class:'submit-button' %>
+  </div>
+  <%end%>

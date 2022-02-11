@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Festive');
+
+.homepage {
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 200px;
+  background-color: #fff;
+}
+
+.name-title {
+  color: #c18037;
+  font-size: 3rem;
+  font-family: 'Festive', cursive;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 10px;
+}
+
+.log-in {
+  background-color: #3778c2;
+}
+
+.log-in a {
+  color: #fff;
+}
+
+.sign-up a {
+  color: grey;
+}
+
+.link {
+  display: inline-block;
+  padding: 1.6rem 5rem;
+}

@@ -1,0 +1,20 @@
+<section class="group-show">
+  <div class="group-show-options">
+    <div class="single-group-amount">
+      <div class="create-entity-show">
+        <%= link_to 'Create entity', new_user_entity_path, class: 'new-entity-show' %>
+      </div>
+    </div>
+      <div class="single-entity-container">
+        <div class="entity-name">
+          <p class="entity-name-p"><%= @entity.name %></p>
+          <p class="entity-date"> Date: <%= @entity.created_at.year %>-<%= @entity.created_at.month %>-<%= @entity.created_at.day %>
+          </p>
+        </div>
+        <div class="entity-amount">
+          <%= @entity.amount%>$
+        </div>
+      </div>
+  </div>
+</section>
+

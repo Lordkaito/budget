@@ -1,0 +1,27 @@
+<section class="homepage-entity">
+    <div class="entity-options">
+      <div class="amount-entity">
+        <div class="total-amount-for-entity">
+          <p>Total amount: <%= @total_amount %>$</p>
+        </div>
+      </div>
+      <% @all_entities.each do |entity|%>
+      <div class="single-entity-container">
+          <div class="sample-icon">
+            <%= render 'users/dollar'%>
+          </div>
+          <div class="entity-name">
+            <%= link_to entity.name, user_entity_path(current_user.id, entity.id) %>
+          </div>
+          <div class="entities-amount">
+            <%= entity.amount %>
+          </div>
+        </div>
+      <% end %>
+      <div class="low-buttons">
+        <div class="add-entity">
+          <%= link_to 'Create entity', new_user_entity_path(current_user) %>
+        </div>
+      </div>
+    </div>
+</section>

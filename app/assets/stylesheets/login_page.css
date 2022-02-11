@@ -1,0 +1,113 @@
+body {
+  background-color: #fff;
+}
+
+.log-in-container,
+.add-group-form,
+.add-entity-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  max-width: 100vw;
+  width: 100%;
+}
+
+.buttons-container {
+  background-color: #3778c2;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.new_user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.back-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.submit-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.login-button,
+.back-button,
+.submit-button,
+.create-group-button,
+.create-entity-button {
+  margin-top: 0.3rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  padding: 0.7rem;
+  color: white;
+  border: none;
+}
+
+.new_user .field,
+.new-group .field,
+.new-entity .field {
+  max-width: 90%;
+  width: 100%;
+}
+
+.new_user .field input,
+.new-group .field input,
+.new-entity .field input {
+  width: 100%;
+  font-size: 1rem;
+  margin: 0.3rem 0;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid #333;
+  outline: none;
+  padding: 0.5rem 0;
+  max-width: 100%;
+  text-indent: 10px;
+  background-color: transparent;
+}
+
+.forgot {
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.forgot:active {
+  color: #333;
+}
+
+.new-group,
+.new-entity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.4rem;
+}
+
+.new-entity select {
+  width: 100%;
+  background-color: #555;
+  color: #fff;
+  padding: 0.7rem;
+  border: none;
+  font-size: 1rem;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  outline: none;
+  margin-top: 1rem;
+  text-transform: uppercase;
+}

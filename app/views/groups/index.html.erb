@@ -1,0 +1,31 @@
+<section class="homepage-groups">
+    <div class="groups-options">
+      <div class="amount-groups">
+        <div class="total-amount-for-group">
+          <p>Total amount: <%= @total_amount %>$</p>
+        </div>
+      </div>
+      <% @all_groups.each do |group|%>
+      <div class="single-group-container">
+          <div class="sample-icon">
+            <%= render 'users/dollar'%>
+          </div>
+          <div class="group-name">
+            <%= link_to group.name, user_group_path(current_user.id, group.id) %>
+          </div>
+          <div class="entities-amount">
+            <% amount = 0 %>
+            <% group.entities.each do |entity| %>
+              <% amount += entity.amount%>
+            <%end%>
+            <%= amount %>$
+          </div>
+        </div>
+      <% end %>
+      <div class="low-buttons">
+        <div class="add-group">
+          <%= link_to 'Create group', new_user_group_path(current_user) %>
+        </div>
+      </div>
+    </div>
+</section>
